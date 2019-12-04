@@ -1,6 +1,6 @@
-CC ?= gcc
-CFLAGS += -s -O3
-LIBS = -lz -lcap
+CC = arm-linux-androideabi-gcc
+CFLAGS += -s -O2 -std=c99
+LIBS = -lz
 SRC_FILES = *.c
 
 all: tpws

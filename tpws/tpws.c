@@ -6,7 +6,7 @@
 #include <sys/socket.h>
 #include <netinet/ip.h>
 #include <net/if.h>
-#include <ifaddrs.h>
+#include "ifaddrs.h"
 #include <netdb.h>
 #include <unistd.h>
 #include <arpa/inet.h>
@@ -429,7 +429,7 @@ void daemonize()
 	fd=dup(0);
 	/* stderror */
 }
-
+#ifndef __ANDROID__
 bool setpcap(cap_value_t *caps,int ncaps)
 {
 	cap_t capabilities;
@@ -511,6 +511,9 @@ bool droproot()
 	}
 	return dropcaps();
 }
+#else
+bool droproot() {return true;}
+#endif
 
 
 bool writepid(const char *filename)

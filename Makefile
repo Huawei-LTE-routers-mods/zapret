@@ -1,4 +1,4 @@
-DIRS := nfq tpws ip2net mdig
+DIRS := tpws
 TGT := binaries/my
 
 all:	clean

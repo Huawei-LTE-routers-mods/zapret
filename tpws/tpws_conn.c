@@ -14,7 +14,7 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <linux/netfilter_ipv4.h>
-#include <ifaddrs.h>
+#include "ifaddrs.h"
 #include <netdb.h>
 
 #include "tpws.h"
